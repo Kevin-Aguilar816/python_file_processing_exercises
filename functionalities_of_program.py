@@ -15,3 +15,10 @@ class NumberProcessor:
         except FileNotFoundError:
             print(f"Error: The file {self.input_filename} was not found.")
             return False
+        except ValueError:
+            print(
+                f"Error: The file {self.input_filename} contains non-integer values.")
+            return False
+        except Exception as error:
+            print(f"An unexpected error occurred: {error}")
+            return False
