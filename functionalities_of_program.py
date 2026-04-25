@@ -4,3 +4,14 @@ class NumberProcessor:
         self.numbers = []
         self.even_numbers = []
         self.odd_numbers = []
+
+    def read_numbers_from_file(self):
+        try:
+            with open(self.input_filename, 'r') as file:
+                self.numbers = [int(line.strip()) for line in file.readlines()]
+            print(
+                f"Successfully read {len(self.numbers)} numbers from {self.input_filename}")
+            return True
+        except FileNotFoundError:
+            print(f"Error: The file {self.input_filename} was not found.")
+            return False
