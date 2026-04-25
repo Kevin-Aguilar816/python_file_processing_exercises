@@ -22,3 +22,15 @@ class NumberProcessor:
         except Exception as error:
             print(f"An unexpected error occurred: {error}")
             return False
+
+    def classify_numbers(self):
+        if not self.numbers:
+            print("No numbers to classify. Please read numbers from the file first.")
+            return False
+
+        self.even_numbers = [num for num in self.numbers if num % 2 == 0]
+        self.odd_numbers = [num for num in self.numbers if num % 2 != 0]
+
+        print(
+            f"Classified {len(self.even_numbers)} even numbers and {len(self.odd_numbers)} odd numbers.")
+        return True
