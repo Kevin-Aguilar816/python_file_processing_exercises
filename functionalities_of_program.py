@@ -66,3 +66,13 @@ class NumberProcessor:
         except Exception as error:
             print(f"An error occurred while writing to the file: {error}")
             return False
+
+    def process_numbers(self):
+        if not self.read_numbers_from_file():
+            return False
+
+        if not self.classify_numbers():
+            return False
+        even_numbers_read = self.write_even_numbers_to_file()
+        odd_numbers_read = self.write_odd_numbers_to_file()
+        return even_numbers_read and odd_numbers_read
