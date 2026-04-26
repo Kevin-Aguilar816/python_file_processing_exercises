@@ -34,3 +34,35 @@ class NumberProcessor:
         print(
             f"Classified {len(self.even_numbers)} even numbers and {len(self.odd_numbers)} odd numbers.")
         return True
+
+    def write_even_numbers_to_file(self, output_filename="even.txt"):
+        if not self.even_numbers:
+            print("No even numbers to write. Please classify numbers first.")
+            return False
+
+        try:
+            with open(output_filename, 'w') as file:
+                for num in self.even_numbers:
+                    file.write(f"{num}\n")
+            print(
+                f"Successfully wrote {len(self.even_numbers)} even numbers to {output_filename}")
+            return True
+        except Exception as error:
+            print(f"An error occurred while writing to the file: {error}")
+            return False
+
+    def write_odd_numbers_to_file(self, output_filename="odd.txt"):
+        if not self.odd_numbers:
+            print("No odd numbers to write. Please classify numbers first.")
+            return False
+
+        try:
+            with open(output_filename, 'w') as file:
+                for num in self.odd_numbers:
+                    file.write(f"{num}\n")
+            print(
+                f"Successfully wrote {len(self.odd_numbers)} odd numbers to {output_filename}")
+            return True
+        except Exception as error:
+            print(f"An error occurred while writing to the file: {error}")
+            return False
