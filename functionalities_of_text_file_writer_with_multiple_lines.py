@@ -34,3 +34,18 @@ class TextFileWriter:
         except Exception as error:
             print(f"An error occurred while writing to the file: {error}")
             return False
+
+    def display_file_content(self):
+        try:
+            with open(self.filename, 'r') as file:
+                print(f"\n Content of {self.filename}:")
+                content = file.read()
+                if content:
+                    print(content)
+                else:
+                    print("The file is empty.")
+
+        except FileNotFoundError:
+            print(f"The file '{self.filename}' does not exist.")
+        except Exception as error:
+            print(f"An error occurred while reading the file: {error}")
