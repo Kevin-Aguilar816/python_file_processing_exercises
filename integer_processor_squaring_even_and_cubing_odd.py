@@ -1,0 +1,1 @@
+from functionalities_of_the_integer_processor_squaring_even_and_cubing_odd import IntegerProcessor
