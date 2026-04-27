@@ -34,3 +34,16 @@ class IntegerProcessor:
         except Exception as error:
             print(f"An error occurred while reading the file: {error}")
             return False
+
+    def classify_and_transform(self):
+        if not self.integers:
+            print("No integers to process. Please read integers first.")
+            return False
+
+        self.even_integers = [num for num in self.integers if num % 2 == 0]
+        self.odd_integers = [num for num in self.integers if num % 2 != 0]
+
+        self.even_squared = [num ** 2 for num in self.even_integers]
+        self.odd_cubed = [num ** 3 for num in self.odd_integers]
+
+        return True
