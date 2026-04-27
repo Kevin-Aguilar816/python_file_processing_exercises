@@ -57,3 +57,12 @@ class StudentRecordProcessor:
         except Exception as e:
             print(f"Unexpected error reading '{self.input_filename}': {e}")
             return False
+
+    def find_highest_gwa(self):
+        if not self.students:
+            print("No valid student records to process.")
+            return False
+
+        self.top_student = max(self.students, key=lambda student: student.gwa)
+        print(f"found top student: {self.top_student}")
+        return True
