@@ -69,3 +69,15 @@ class IntegerProcessor:
         except Exception as error:
             print(f"An error occurred while writing to '{filename}': {error}")
             return False
+
+    def process(self):
+        if not self.read_integers():
+            return False
+        if not self.classify_and_transform():
+            return False
+        if not self.write_double_file():
+            return False
+        if not self.write_triple_file():
+            return False
+        print("Processing completed successfully.")
+        return True
