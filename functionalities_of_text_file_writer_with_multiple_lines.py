@@ -1,6 +1,6 @@
 class TextFileWriter:
     def __init__(self, filename="mylife.txt"):
-        slef.filename = filename
+        self.filename = filename
         self.content = []
 
     def get_user_input(self):
@@ -20,6 +20,7 @@ class TextFileWriter:
                 "Do you want to add more lines? (yes/no): ").strip().lower()
             if more in ['no', 'n', '']:
                 break
+        return len(self.content) > 0
 
     def write_to_file(self):
         if not self.content:
