@@ -48,7 +48,7 @@ class IntegerProcessor:
 
         return True
 
-    def write_double_file():
+    def write_double_file(self):
         filename = "double.txt"
         try:
             with open(filename, 'w') as file:
