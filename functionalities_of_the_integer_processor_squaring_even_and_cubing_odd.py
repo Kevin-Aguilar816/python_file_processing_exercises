@@ -58,3 +58,14 @@ class IntegerProcessor:
         except Exception as error:
             print(f"An error occurred while writing to '{filename}': {error}")
             return False
+
+    def write_triple_file(self):
+        filename = "triple.txt"
+        try:
+            with open(filename, 'w') as file:
+                for cube in self.odd_cubed:
+                    file.write(f"{cube}\n")
+            return True
+        except Exception as error:
+            print(f"An error occurred while writing to '{filename}': {error}")
+            return False
