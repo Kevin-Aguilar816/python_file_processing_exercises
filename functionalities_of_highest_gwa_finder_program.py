@@ -66,3 +66,10 @@ class StudentRecordProcessor:
         self.top_student = max(self.students, key=lambda student: student.gwa)
         print(f"found top student: {self.top_student}")
         return True
+
+    def display_highest_gwa(self):
+        if self.top_student:
+            print(
+                f"The student with the highest GWA is: {self.top_student.name} with a GWA of {self.top_student.gwa:.2f}")
+        else:
+            print("No top student found. Please ensure records are processed.")
