@@ -49,3 +49,25 @@ class TextFileWriter:
             print(f"The file '{self.filename}' does not exist.")
         except Exception as error:
             print(f"An error occurred while reading the file: {error}")
+
+    def process(self):
+        if not self.get_user_input():
+            print("No conent collected. Exiting.")
+            return False
+
+        self.preview_content()
+
+        confirm = input(
+            "Do you want to write this content to the file? (yes/no): ").strip().lower()
+        if confirm not in ['yes', 'y']:
+            print("Writing cacelled to file.")
+            return False
+
+        if not self.write_to_file():
+            print("Failed to write content to file.")
+            return False
+
+        self.display_file_content()
+
+        print(f"\n Successfully completed writing to '{self.filename}'")
+        return True
