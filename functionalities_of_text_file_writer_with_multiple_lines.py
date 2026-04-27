@@ -6,10 +6,13 @@ class TextFileWriter:
     def get_user_input(self):
         while True:
             line = input("Enter a line of text (or 'done' to finish): ")
+
             if line.lower() == 'done':
                 break
-            self.content.append(line)
-            print(f"Added: '{line}'")
+
+            if line:
+                self.content.append(line)
+                print(f"Added: '{line}'")
             else:
                 print("Invalid input. Please enter a line of text or 'done' to finish.")
 
