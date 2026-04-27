@@ -15,3 +15,14 @@ class StudentRecordProcessor:
         self.input_filename = input_filename
         self.students = []
         self.top_student = None
+
+    def read_student_record_from_file(self):
+        try:
+            with open(self.input_filename, 'r') as file:
+                lines = file.readlines()
+
+            self.students = []
+            for line_num, line in enumerate(lines, start=1):
+                line = line.strip()
+                if not line:
+                    continue
