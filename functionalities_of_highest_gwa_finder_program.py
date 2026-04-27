@@ -26,3 +26,10 @@ class StudentRecordProcessor:
                 line = line.strip()
                 if not line:
                     continue
+
+        try:
+            parts = line.split(',')
+            if len(parts) < 2:
+                print(
+                    f"Warning: Line {line_num} is not in the correct format. Skipping.")
+                continue
