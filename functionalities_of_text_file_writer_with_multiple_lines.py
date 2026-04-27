@@ -12,3 +12,8 @@ class TextFileWriter:
             print(f"Added: '{line}'")
             else:
                 print("Invalid input. Please enter a line of text or 'done' to finish.")
+
+            more = input(
+                "Do you want to add more lines? (yes/no): ").strip().lower()
+            if more in ['no', 'n', '']:
+                break
