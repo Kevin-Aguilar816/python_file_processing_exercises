@@ -73,3 +73,13 @@ class StudentRecordProcessor:
                 f"The student with the highest GWA is: {self.top_student.name} with a GWA of {self.top_student.gwa:.2f}")
         else:
             print("No top student found. Please ensure records are processed.")
+
+    def process_records(self):
+        if not self.read_student_record_from_file():
+            return False
+
+        if not self.find_highest_gwa():
+            return False
+
+        self.display_highest_gwa()
+        return True
