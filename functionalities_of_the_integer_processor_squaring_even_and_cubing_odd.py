@@ -47,3 +47,14 @@ class IntegerProcessor:
         self.odd_cubed = [num ** 3 for num in self.odd_integers]
 
         return True
+
+    def write_double_file():
+        filename = "double.txt"
+        try:
+            with open(filename, 'w') as file:
+                for square in self.even_squared:
+                    file.write(f"{square}\n")
+            return True
+        except Exception as error:
+            print(f"An error occurred while writing to '{filename}': {error}")
+            return False
