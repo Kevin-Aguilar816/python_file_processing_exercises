@@ -63,7 +63,7 @@ class StudentRecordProcessor:
             print("No valid student records to process.")
             return False
 
-        self.top_student = max(self.students, key=lambda student: student.gwa)
+        self.top_student = min(self.students, key=lambda student: student.gwa)
         print(f"found top student: {self.top_student}")
         return True
 
