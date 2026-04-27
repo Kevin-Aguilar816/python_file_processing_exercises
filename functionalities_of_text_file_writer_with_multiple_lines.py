@@ -59,8 +59,6 @@ class TextFileWriter:
             print("No conent collected. Exiting.")
             return False
 
-        self.preview_content()
-
         confirm = input(
             "Do you want to write this content to the file? (yes/no): ").strip().lower()
         if confirm not in ['yes', 'y']:
